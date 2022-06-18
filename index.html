@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Murad's Expenses Calc
+    </title>
+    <!-- tailwind Links  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+
+</head>
+
+<body class="max-w-screen-xl mx-auto px-8">
+    <header class="mt-5">
+        <h1 class="text-center text-5xl text-indigo mb-8 pb-8">Fortune Money Expenses</h1>
+    </header>
+    <main>
+        <div class="container mt-5 mb-8">
+            <div class="grid grid-cols-2 gap-4">
+                <div class="">
+                    <img class="rounded-lg shadow-xl" src="img/money.jpg" alt="">
+                </div>
+                <div class="bg-gray-100 ml-8 rounded-lg shadow-xl">
+                    <h4 class="text-center mt-8 text-2xl mb-8">Monthly Expenses</h4>
+                    <div>
+                        <div class="text-center mt-3">
+                            <span class="text-lg">Income: </span>
+                            <input id="income-field"
+                                class="ml-6 py-1 rounded border-0 bg-gray-300 focus:outline-none focus:border-0 focus:border-pink-500 focus:bg-white"
+                                type="text">
+                        </div>
+                    </div>
+                    <h4 class="text-center mt-8 text-2xl mb-8">Expenses</h4>
+                    <div class="grid grid-cols-6 gap-4">
+                        <div class="text-center col-start-1 col-end-7">
+                            <span class="text-lg">Food: </span>
+                            <input id="food-input"
+                                class="ml-10 py-1 rounded border-0 bg-gray-300 focus:outline-none focus:border-0 focus:border-pink-500 focus:bg-white"
+                                type="text">
+                        </div>
+
+                        <div class="text-center col-start-1 col-end-7">
+                            <span class="text-lg">Rent: </span>
+                            <input id="rent-input"
+                                class="ml-11 py-1 rounded border-0 bg-gray-300 focus:outline-none focus:border-0 focus:border-pink-500 focus:bg-white"
+                                type="text">
+                        </div>
+                        <div class="text-center col-start-1 col-end-7">
+                            <span class="text-lg">Clothes: </span>
+                            <input id="clothes-input"
+                                class="ml-6 py-1 rounded border-0 bg-gray-300 focus:outline-none focus:border-0 focus:border-pink-500 focus:bg-white"
+                                type="text">
+                        </div>
+                        <div class="text-center col-start-1 col-end-7">
+                            <button id="calculation-button"
+                                class="bg-orange-600 py-2 px-6 rounded text-white hover:bg-orange-700">Calculate</button>
+                        </div>
+                        <div class="text-center mt-5 col-start-1 col-end-7">
+                            <h5 class="text-3xl">Total Expenses: <span id="total-expenses">00</span> </h5>
+                            <h5 class="text-2xl mt-2">Balance: <span id="balance">00</span></h5>
+                        </div>
+                        <div class="text-center mt-3 col-start-1 col-end-7">
+                            <span class="text-lg ">
+                                Save:
+                            </span>
+                            <input id="percentage"
+                                class="py-1 rounded border-0 bg-gray-300 focus:outline-none focus:border-0 focus:border-pink-500 focus:bg-white"
+                                type="text">
+
+                            <span class="mr-2">
+                                %
+                            </span>
+                            <span class="">
+                                <button id="save-button"
+                                    class="bg-orange-600 py-2 px-6 rounded text-white hover:bg-orange-700">Save</button>
+                            </span>
+                        </div>
+                        <div class="text-center mt-3 col-start-1 col-end-7">
+                            <h5 class="text-2xl">Saving Amount: <span id="saved-balance">00</span> </h5>
+                            <h5 class="text-2xl">Remaining Balance: <span id="remaining-balance">00</span></h5>
+                        </div>
+                    </div>
+                    <div class="text-center mt-12 w-full mx-auto">
+                        <div style="display: none;" id="positive-error" class="justify-items-center grid">
+                            <img src="img/cross.jpg" class="w-7" alt="">
+                            <p class="text-lg"> Please input a positive amount</p>
+                        </div>
+                        <div style="display: none;" id="string-error" class="justify-items-center grid">
+                            <img src="img/cross.jpg" class="w-7 flex" alt="">
+                            <p class="text-lg flex"> Please input a Amount in Number not in Text</p>
+                        </div>
+                        <div style="display: none;" id="expenses-error" class="justify-items-center grid">
+                            <img src="img/cross.jpg" class="w-7" alt="">
+                            <p class="text-lg"> your expenses is more then your Balance</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
